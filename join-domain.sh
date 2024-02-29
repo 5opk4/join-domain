@@ -29,7 +29,7 @@ fi
 echo -e "Необходимые пакеты \e[1;32mуспешно\e[0m установлены.\nВведите пароль для входа в домен - \e[1;33m$dmn.$tld\e[0m"
 join=$(realm join --verbose $dmn.$tld --user=$adm --user-principal="host/$host.$dmn.$tld@$dmn.$tld"--computer-ou="OU=Linux Servers, OU=KOM, DC=$dmn, DC=$tld" --install=/)
 
-if [ $? -eq 0 ]; then
+if [[ $? -eq 0 ]]; then
 		echo -e "\e[1;32mЭтот компьютер подключился к домену.\e[0m"
 	else
 		echo -e "\e[1;31mОШИБКА: Компьютер не смог подключиться к домену.\e[0m"
