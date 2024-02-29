@@ -47,10 +47,11 @@ fi
 if grep -q "$name = True" $sssd; then
 		sed -i "s/$name = True/$name = False/g" $sssd
 		echo "Опция $name выключена."
-		systemctl restart sssd
 	else
 		echo "Опция $name уже выключена или sssd.conf не существует."
 fi
+
+systemctl restart sssd
 
 #Включение mkhomedir.
 echo -e "Включите функцию - \e[1;33mCreate home directory on login.\e[0m"
