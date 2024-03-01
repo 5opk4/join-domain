@@ -25,7 +25,7 @@ if [[ -n $pack ]]; then
 fi
 
 #Вход в домен.
-echo -e "Необходимые пакеты \e[1;32mуспешно\e[0m установлены.\nВведите пароль для входа в домен - \e[1;33m$dmn.$tld\e[0m"
+echo -e "Необходимые пакеты \e[1;32mуспешно\e[0m установлены.\nВведите пароль для входа в домен - \e[1;33m$dmn\e[0m"
 join=$(realm join --verbose $dmn --user=$adm --user-principal="host/$host@$dmn" --install=/)
 
 if [[ $? -eq 0 ]]; then
